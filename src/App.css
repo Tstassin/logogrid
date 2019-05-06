@@ -48,3 +48,11 @@
 .imageList img {
   max-width: 100%;
 }
+
+.logogrid {
+  display: flex;
+}
+
+.logogrid img {
+  flex: 0 1 100%;
+}

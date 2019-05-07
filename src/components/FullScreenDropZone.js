@@ -3,18 +3,34 @@ import Dropzone from 'react-dropzone'
 
 class FullScreenDropZone extends React.Component {
     state = {
-        accept: '',
+        accept: 'image/*',
         files: [],
         dropzoneActive: false
     }
 
     onDragEnter = () => this.setState({ dropzoneActive: true })
     onDragLeave = () => this.setState({ dropzoneActive: false })
-    onDrop = (newfiles) => this.setState({ files: [...this.state.files, ...newfiles], dropzoneActive: false })
+    onDrop = (newFiles) => {
+        newFiles.map(file => Object.assign(file, { preview: URL.createObjectURL(file) }))
+        this.setState({ files: [...this.state.files, ...newFiles], dropzoneActive: false })
+        console.log(this.state.files)
+    }
+
 
     render() {
 
-        const { accept, files, dropzoneActive } = this.state;
+        const { accept, files, dropzoneActive } = this.state
+
+        const thumbs = files.map(file => (
+            <div className="thumb" key={file.name}>
+                <div className="thumbInner">
+                    <img
+                        src={file.preview}
+                        className="img"
+                    />
+                </div>
+            </div>
+        ))
 
         return (
             <Dropzone
@@ -34,8 +50,9 @@ class FullScreenDropZone extends React.Component {
 
                         <h2>Dropped files</h2>
                         <ul>
-                            {files.map(f => <li>{f.name} - {f.size} bytes</li>)}
+                            {files.map((f, index) => <li key={"image-" + index}>{f.name} - {f.size} bytes</li>)}
                         </ul>
+                        {thumbs}
 
                     </div>
                 )}

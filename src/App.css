@@ -62,6 +62,7 @@
 
 .logogrid img {
   flex: 0 1 100%;
+  align-self: center;
 }
 
 .img {

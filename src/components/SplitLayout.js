@@ -24,21 +24,16 @@ class SplitLayout extends React.Component {
         ]
     }
 
-    deleteImage = (index) => {
-        this.setState({
-            imageList: this.state.imageList.filter((_, i) => i !== index)
-          })
-    }
 
     render() {
         return (
             <div>
                 <div className="titleBar"><h1>LogoGrid</h1></div>
                 <div className="leftPanel">
-                    {React.cloneElement(this.props.children[0], { imageList: this.state.imageList, deleteImage: this.deleteImage })}
+                    {React.cloneElement(this.props.children[0], { imageList: this.props.imageList, deleteImage: this.props.deleteImage })}
                 </div>
                 <div className="rightPanel">
-                    {React.cloneElement(this.props.children[1], { imageList: this.state.imageList })}
+                    {React.cloneElement(this.props.children[1], { imageList: this.props.imageList })}
                 </div>
             </div>
         )

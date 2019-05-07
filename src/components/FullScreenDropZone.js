@@ -15,6 +15,11 @@ class FullScreenDropZone extends React.Component {
         this.setState({ files: [...this.state.files, ...newFiles], dropzoneActive: false })
         console.log(this.state.files)
     }
+    deleteImage = (index) => {
+        this.setState({
+            files: this.state.files.filter((_, i) => i !== index)
+          })
+    }
 
 
     render() {
@@ -24,10 +29,7 @@ class FullScreenDropZone extends React.Component {
         const thumbs = files.map(file => (
             <div className="thumb" key={file.name}>
                 <div className="thumbInner">
-                    <img
-                        src={file.preview}
-                        className="img"
-                    />
+                    <img src={file.preview} className="img" />
                 </div>
             </div>
         ))
@@ -46,7 +48,7 @@ class FullScreenDropZone extends React.Component {
 
                         {dropzoneActive && <div className="overlayStyle">Drop files...</div>}
 
-                        <div>{this.props.children}</div>
+                        <div>{React.cloneElement(this.props.children, { imageList: files, deleteImage: this.deleteImage })}</div> 
 
                         <h2>Dropped files</h2>
                         <ul>

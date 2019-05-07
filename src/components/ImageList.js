@@ -7,7 +7,7 @@ class ImageList extends React.Component {
             <ul className="imageList">
                 {this.props.imageList.map(
                     (image, index) => {
-                        return <li className="img" key={"image-"+index}><img src={image.url} onClick={ () => { this.props.deleteImage(index) } } /></li>
+                        return <li className="img" key={"image-"+index}><img src={image.preview} onClick={ () => { this.props.deleteImage(index) } } /></li>
                     }
                 )}
             </ul>

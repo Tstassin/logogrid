@@ -8,75 +8,36 @@ class FullScreenDropZone extends React.Component {
         dropzoneActive: false
     }
 
-    onDragEnter() {
-        this.setState({
-            dropzoneActive: true
-        });
-    }
-
-    onDragLeave() {
-        this.setState({
-            dropzoneActive: false
-        });
-    }
-
-    onDrop(files) {
-        this.setState({
-            files,
-            dropzoneActive: false
-        });
-    }
-
-    applyMimeTypes(event) {
-        this.setState({
-            accept: event.target.value
-        });
-    }
+    onDragEnter = () => this.setState({ dropzoneActive: true })
+    onDragLeave = () => this.setState({ dropzoneActive: false })
+    onDrop = (newfiles) => this.setState({ files: [...this.state.files, ...newfiles], dropzoneActive: false })
 
     render() {
+
         const { accept, files, dropzoneActive } = this.state;
-        const overlayStyle = {
-            position: 'absolute',
-            top: 0,
-            right: 0,
-            bottom: 0,
-            left: 0,
-            padding: '2.5em 0',
-            background: 'rgba(0,0,0,0.5)',
-            textAlign: 'center',
-            color: '#fff'
-        };
+
         return (
             <Dropzone
                 disableClick
                 style={{ position: "relative" }}
                 accept={accept}
-                onDrop={this.onDrop.bind(this)}
-                onDragEnter={this.onDragEnter.bind(this)}
-                onDragLeave={this.onDragLeave.bind(this)}
+                onDrop={this.onDrop}
+                onDragEnter={this.onDragEnter}
+                onDragLeave={this.onDragLeave}
             >
                 {({ getRootProps }) => (
-
                     <div {...getRootProps()}>
-                        {dropzoneActive && <div style={overlayStyle}>Drop files...</div>}
-                        <h1>My awesome app</h1>
+
+                        {dropzoneActive && <div className="overlayStyle">Drop files...</div>}
+
                         <div>{this.props.children}</div>
-                        <label htmlFor="mimetypes">Enter mime types you want to accept: </label>
-                        <input
-                            type="text"
-                            id="mimetypes"
-                            onChange={this.applyMimeTypes.bind(this)}
-                        />
 
                         <h2>Dropped files</h2>
                         <ul>
-                            {
-                                files.map(f => <li>{f.name} - {f.size} bytes</li>)
-                            }
+                            {files.map(f => <li>{f.name} - {f.size} bytes</li>)}
                         </ul>
 
                     </div>
-
                 )}
             </Dropzone>
         )

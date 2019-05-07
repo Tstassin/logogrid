@@ -18,7 +18,7 @@ class ImageList extends React.Component {
                     )}
                 </ul>
                 {console.log(this.props.imageList)}
-                <SortableComponent imageList={this.props.imageList} onSortEnd={this.props.onSortEnd} />
+                <SortableComponent axis={'xy'} imageList={this.props.imageList} onSortEnd={this.props.onSortEnd} deleteImage={this.props.deleteImage} />
                 {this.props.imageList.length == 0 && <h2>Drop some images to start...</h2>}
             </div>
         )

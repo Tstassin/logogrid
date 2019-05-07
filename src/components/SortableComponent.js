@@ -12,7 +12,7 @@ const SortableItem = SortableElement(
 
 const SortableList = SortableContainer(({ items }) => {
     return (
-        <ul>
+        <ul className="imageList">
             {items.map((value, index) => (
                 <SortableItem key={`item-${index}`} index={index} value={value} />
             ))}
@@ -24,7 +24,8 @@ class SortableComponent extends Component {
 
     render() {
         console.log(this.props.imageList)
-        return <SortableList items={this.props.imageList} onSortEnd={this.props.onSortEnd} />;
+        console.log(this.props.axis)
+        return <SortableList axis={this.props.axis} items={this.props.imageList} onSortEnd={this.props.onSortEnd} />;
     }
 }
 

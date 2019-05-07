@@ -1,5 +1,6 @@
 import React from 'react'
 import Dropzone from 'react-dropzone'
+import arrayMove from 'array-move';
 
 class FullScreenDropZone extends React.Component {
     state = {
@@ -18,7 +19,13 @@ class FullScreenDropZone extends React.Component {
     deleteImage = (index) => {
         this.setState({
             files: this.state.files.filter((_, i) => i !== index)
-          })
+        })
+    }
+    onSortEnd = ({ oldIndex, newIndex }) => {
+        console.log(this.state.files, oldIndex, newIndex)
+        this.setState(({ files }) => ({
+            files: arrayMove(files, oldIndex, newIndex),
+        }))
     }
 
 
@@ -40,7 +47,7 @@ class FullScreenDropZone extends React.Component {
 
                         {dropzoneActive && <div className="overlayStyle">Drop files...</div>}
 
-                        <div>{React.cloneElement(this.props.children, { imageList: files, deleteImage: this.deleteImage })}</div> 
+                        <div>{React.cloneElement(this.props.children, { imageList: files, deleteImage: this.deleteImage, onSortEnd:this.onSortEnd })}</div>
 
                     </div>
                 )}

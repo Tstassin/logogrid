@@ -1,5 +1,6 @@
 import React from 'react'
 import '../App.css'
+import SortableComponent from './SortableComponent';
 
 class ImageList extends React.Component {
     render() {
@@ -16,6 +17,8 @@ class ImageList extends React.Component {
                         }
                     )}
                 </ul>
+                {console.log(this.props.imageList)}
+                <SortableComponent imageList={this.props.imageList} onSortEnd={this.props.onSortEnd} />
                 {this.props.imageList.length == 0 && <h2>Drop some images to start...</h2>}
             </div>
         )

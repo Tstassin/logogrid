@@ -42,11 +42,6 @@ class FullScreenDropZone extends React.Component {
 
                         <div>{React.cloneElement(this.props.children, { imageList: files, deleteImage: this.deleteImage })}</div> 
 
-                        <h2>Dropped files</h2>
-                        <ul>
-                            {files.map((f, index) => <li key={"image-" + index}>{f.name} - {f.size} bytes</li>)}
-                        </ul>
-
                     </div>
                 )}
             </Dropzone>

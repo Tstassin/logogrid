@@ -6,7 +6,6 @@ class SplitLayout extends React.Component {
     render() {
         return (
             <div>
-                <div className="titleBar"><h1>LogoGrid</h1></div>
                 <div className="leftPanel">
                     {React.cloneElement(this.props.children[0], { imageList: this.props.imageList, deleteImage: this.props.deleteImage })}
                 </div>

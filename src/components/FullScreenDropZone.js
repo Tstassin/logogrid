@@ -26,14 +26,6 @@ class FullScreenDropZone extends React.Component {
 
         const { accept, files, dropzoneActive } = this.state
 
-        const thumbs = files.map(file => (
-            <div className="thumb" key={file.name}>
-                <div className="thumbInner">
-                    <img src={file.preview} className="img" />
-                </div>
-            </div>
-        ))
-
         return (
             <Dropzone
                 disableClick
@@ -54,7 +46,6 @@ class FullScreenDropZone extends React.Component {
                         <ul>
                             {files.map((f, index) => <li key={"image-" + index}>{f.name} - {f.size} bytes</li>)}
                         </ul>
-                        {thumbs}
 
                     </div>
                 )}

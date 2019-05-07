@@ -1,29 +1,7 @@
 import React from 'react'
 import '../App.css'
-import image1 from '../assets/images/image1.jpg'
-import image2 from '../assets/images/image2.jpg'
-import image3 from '../assets/images/image3.png'
-import image4 from '../assets/images/image4.webp'
 
 class SplitLayout extends React.Component {
-
-    state = {
-        imageList: [
-            {
-                url: image1,
-            },
-            {
-                url: image2,
-            },
-            {
-                url: image3,
-            },
-            {
-                url: image4,
-            },
-        ]
-    }
-
 
     render() {
         return (

@@ -3,18 +3,18 @@ import { render } from 'react-dom';
 import { SortableContainer, SortableElement } from 'react-sortable-hoc';
 
 const SortableItem = SortableElement(
-    ({ value, index }) => 
+    ({ value, index, deleteImage }) => 
         <li className="img" key={"image-" + index}>
-            <img src={value.preview} onClick={() => { this.props.deleteImage(index) }}
+            <img src={value.preview} onClick={() => { deleteImage(index) }} 
                 alt={value.name + " - " + value.size + " bytes"} />
         </li>
 )
 
-const SortableList = SortableContainer(({ items }) => {
+const SortableList = SortableContainer(({ items, deleteImage }) => {
     return (
         <ul className="imageList">
             {items.map((value, index) => (
-                <SortableItem key={`item-${index}`} index={index} value={value} />
+                <SortableItem key={`item-${index}`} index={index} value={value} deleteImage={deleteImage} />
             ))}
         </ul>
     )
@@ -23,9 +23,7 @@ const SortableList = SortableContainer(({ items }) => {
 class SortableComponent extends Component {
 
     render() {
-        console.log(this.props.imageList)
-        console.log(this.props.axis)
-        return <SortableList axis={this.props.axis} items={this.props.imageList} onSortEnd={this.props.onSortEnd} />;
+        return <SortableList pressDelay={100} axis={this.props.axis} items={this.props.imageList} onSortEnd={this.props.onSortEnd} deleteImage={this.props.deleteImage} />;
     }
 }
 

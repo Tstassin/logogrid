@@ -33,20 +33,26 @@
 }
 
 .leftPanel {
+  padding:20px;
   width: 50%;
   float: left;
+  box-sizing: border-box;
 }
 .rightPanel {
+  padding:20px;
   width: 50%;
   float: right;
+  box-sizing: border-box;
 }
 
 .imageList {
   list-style-type: none;
-  margin: 20px;
+  padding: 0;
 }
 .imageList img {
-  max-width: 100%;
+  max-width: 25%;
+  min-width: 65px; 
+  margin: 5px;
 }
 
 .logogrid {

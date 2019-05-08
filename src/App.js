@@ -4,6 +4,7 @@ import LogoGrid from './components/LogoGrid'
 import ImageList from './components/ImageList'
 import FullScreenDropZone from './components/FullScreenDropZone'
 import './App.css';
+import FlexMenu from './components/FlexMenu';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <SplitLayout>
         <ImageList></ImageList>
         <LogoGrid></LogoGrid>
+        <FlexMenu />
       </SplitLayout>
     </FullScreenDropZone>
   )

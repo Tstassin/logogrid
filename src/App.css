@@ -37,12 +37,19 @@
     margin: -8px 50px;
 }
 
-.leftPanel {
+.topPanel {
     padding: 20px;
     box-sizing: border-box;
 }
 
+.leftPanel {
+    float: left;
+    width: 200px;
+}
+
 .rightPanel {
+    float: right;
+    width: calc(100% - 200px);
     padding: 20px;
     box-sizing: border-box;
 }

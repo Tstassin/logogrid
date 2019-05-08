@@ -17,6 +17,7 @@ class FullScreenDropZone extends React.Component {
         console.log(this.state.files)
     }
     deleteImage = (index) => {
+        URL.revokeObjectURL(this.state.files[index].preview)
         this.setState({
             files: this.state.files.filter((_, i) => i !== index)
         })

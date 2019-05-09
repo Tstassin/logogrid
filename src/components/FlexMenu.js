@@ -2,49 +2,34 @@ import React from 'react'
 
 class FlexMenu extends React.Component {
 
-    state = {
-        properties: [
-            {
-                name: "flex-direction",
-                values: [
-                    { value: "row" },
-                    { value: "column" },
-                    { value: "row-reverse" },
-                    { value: "column-reverse" },
-                ],
-                active: 0
-            }
-        ]
-    }
-
-    switch = (index, value) => {
-        console.log(index, value)
-        this.setState({
-            properties: [
-                ...this.state.properties.slice(0, index), 
-                { ...this.state.properties[index], active: value }, 
-                ...this.state.properties.slice (index + 1, -1)
-            ]
-        })
-    }
-
     render() {
         return (
-            <div>
-                <table>
+            <div className="flexMenu">
+                <table className="flexTable">
                     <tbody>
-                        {this.state.properties.map((property, propertyIndex) => (
+                        {this.props.properties.map((property, propertyIndex) => (
                             <tr name={property.name} index={propertyIndex} key={property.name}>
                                 <td>
-                                    <div>{property.name}</div>
+                                    <div className="propertyName">{property.name}</div>
                                 </td>
-
-                                {property.values.map((value, valueIndex) => (
-                                    <td name={value.value} index={valueIndex} key={property.name + '-' + value.value}
-                                        className={property.active === valueIndex ? "active" : undefined}>
-                                        <a href="#" onClick={() => this.switch(propertyIndex, valueIndex)}>{value.value}</a>
-                                    </td>
-                                ))}
+                                <td>
+                                    {property.values.map((value, valueIndex) => (
+                                        <span className="propertyValue" name={value.value} index={valueIndex} key={property.name + '-' + value.value}
+                                            className={property.active === valueIndex ? "propertyValue active" : "propertyValue"}>
+                                            <a href="#" onClick={() => this.props.switch(propertyIndex, valueIndex)}>{value.value}</a>
+                                        </span>
+                                    ))}
+                                </td>
+                            </tr>
+                        ))}
+                        {this.props.inputs.map((input, inputIndex) => (
+                            <tr name={input.name} index={inputIndex} key={input.name}>
+                                <td>
+                                    <div className="inputName">{input.name}</div>
+                                </td>
+                                <td>
+                                    <input inputindex={inputIndex} type={input.type} value={input.type === "number" ? parseInt(input.value) : input.value} onChange={this.props.switchValue} />
+                                </td>
                             </tr>
                         ))}
                     </tbody>

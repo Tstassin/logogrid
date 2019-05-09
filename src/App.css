@@ -44,12 +44,27 @@
 
 .leftPanel {
     float: left;
-    width: 200px;
+    width: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.flexMenu .flexTable .propertyName {
+    margin-right: 20px;
+    margin-bottom: 5px;
+}
+
+.flexMenu .flexTable .propertyValue {
+    margin-right: 10px;
+}
+
+.flexMenu .flexTable .propertyValue:not(.active) a {
+    text-decoration: none;
 }
 
 .rightPanel {
     float: right;
-    width: calc(100% - 200px);
+    width: 50%;
     padding: 20px;
     box-sizing: border-box;
 }
@@ -72,8 +87,7 @@
 }
 
 .logogrid img {
-    flex: 0 1 100%;
-    align-self: center;
+    width: 100%;
 }
 
 .overlayStyle {

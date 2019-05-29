@@ -1,11 +1,12 @@
-import React, { Component } from 'react';
-import { render } from 'react-dom';
-import { SortableContainer, SortableElement } from 'react-sortable-hoc';
+import React, { Component } from 'react'
+import { render } from 'react-dom'
+import { SortableContainer, SortableElement } from 'react-sortable-hoc'
+import '../App.css'
 
 const SortableItem = SortableElement(
-    ({ value, index, deleteImage }) => 
+    ({ value, index, deleteImage }) =>
         <li className="img" key={"image-" + index}>
-            <img src={value.preview} onClick={() => { deleteImage(index) }} 
+            <img src={value.preview} onClick={() => { deleteImage(index) }}
                 alt={value.name + " - " + value.size + " bytes"} />
         </li>
 )
@@ -26,9 +27,21 @@ class SortableComponent extends Component {
         console.log(this.props.imageList, oldIndex, newIndex)
         this.props.imageOperations.moveImage(oldIndex, newIndex)
     }
-
     render() {
-        return <SortableList pressDelay={100} axis={this.props.axis} items={this.props.imageOperations.imageList} onSortEnd={this.onSortEnd} deleteImage={this.props.imageOperations.deleteImage} />;
+        return (
+            <div>
+                <div className="titleBar"><h1>LogoGrid</h1></div>
+                <SortableList
+                    axis={'xy'}
+                    pressDelay={100} 
+                    imageOperations={this.props.imageOperations}
+                    items={this.props.imageOperations.imageList} 
+                    onSortEnd={this.onSortEnd} 
+                    deleteImage={this.props.imageOperations.deleteImage}
+                />
+                {this.props.imageOperations.imageList.length == 0 && <h2>Drop some images to start...</h2>}
+            </div>
+        )
     }
 }
 

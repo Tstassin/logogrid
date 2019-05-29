@@ -5,14 +5,14 @@ import FullScreenDropZone from './components/FullScreenDropZone'
 import ImageContainer from './components/ImageContainer'
 import './App.css';
 import FlexMenu from './components/FlexMenu';
-import SortableComponent from './components/SortableComponent';
+import SortableImageList from './components/SortableImageList';
 
 function App() {
   return (
     <ImageContainer>
       <FullScreenDropZone>
         <SplitLayout>
-          <SortableComponent />
+          <SortableImageList />
           <FlexMenu />
           <LogoGrid />
         </SplitLayout>

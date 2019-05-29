@@ -21,7 +21,7 @@ const SortableList = SortableContainer(({ items, deleteImage }) => {
     )
 })
 
-class SortableComponent extends Component {
+class SortableImageList extends Component {
 
     onSortEnd = ({ oldIndex, newIndex }) => {
         console.log(this.props.imageList, oldIndex, newIndex)
@@ -45,4 +45,4 @@ class SortableComponent extends Component {
     }
 }
 
-export default SortableComponent
+export default SortableImageList

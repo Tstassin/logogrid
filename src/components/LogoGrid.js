@@ -1,5 +1,4 @@
 import React from 'react'
-import FlexMenu from './FlexMenu';
 
 class LogoGrid extends React.Component {
     render() {
@@ -7,7 +6,7 @@ class LogoGrid extends React.Component {
             <div className="logogrid" style={{ ...this.props.properties, display: "flex"}}>
                 {this.props.imageOperations.imageList.map(
                     (image, index) => {
-                        return <img key={"logo-"+index} style={{...this.props.inputs}}src={image.preview} />
+                        return <img key={"logo-"+index} style={{...this.props.inputs}} src={image.preview} alt="" />
                     }
                 )}
             </div>

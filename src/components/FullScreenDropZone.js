@@ -17,7 +17,6 @@ class FullScreenDropZone extends React.Component {
     render() {
 
         const { accept, dropzoneActive } = this.state
-        const { imageList} = this.props
 
         return (
             <Dropzone
@@ -33,7 +32,10 @@ class FullScreenDropZone extends React.Component {
 
                         {dropzoneActive && <div className="overlayStyle">Drop files...</div>}
 
-                        <div>{React.cloneElement(this.props.children, { imageOperations: this.props.imageOperations } )}</div>
+                        <div>{React.cloneElement(
+                            this.props.children,
+                            { imageOperations: this.props.imageOperations }
+                        )}</div>
 
                     </div>
                 )}

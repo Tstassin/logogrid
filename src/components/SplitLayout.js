@@ -1,6 +1,5 @@
 import React from 'react'
 import '../App.css'
-import { numberLiteralTypeAnnotation } from '@babel/types';
 
 class SplitLayout extends React.Component {
 

@@ -14,7 +14,10 @@ class FlexMenu extends React.Component {
                                 </td>
                                 <td>
                                     {property.values.map((value, valueIndex) => (
-                                        <span className="propertyValue" name={value.value} index={valueIndex} key={property.name + '-' + value.value}
+                                        <span
+                                            name={value.value}
+                                            index={valueIndex}
+                                            key={property.name + '-' + value.value}
                                             className={property.active === valueIndex ? "propertyValue active" : "propertyValue"}>
                                             <a href="#" onClick={() => this.props.switch(propertyIndex, valueIndex)}>{value.value}</a>
                                         </span>

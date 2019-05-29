@@ -21,14 +21,13 @@ class ImageContainer extends React.PureComponent {
     }
 
     moveImage = (oldIndex, newIndex) => {
-        if (oldIndex != newIndex)
+        if (oldIndex !== newIndex)
             this.setState(
                 { imageList: arrayMove(this.state.imageList, oldIndex, newIndex) }, () => { console.log(this.state.imageList) }
             )
     }
 
     render() {
-        let imageList = this.state.imageList
         return (
             <div id="imageContainer">
                 {React.cloneElement(

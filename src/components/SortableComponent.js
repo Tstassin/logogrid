@@ -22,8 +22,13 @@ const SortableList = SortableContainer(({ items, deleteImage }) => {
 
 class SortableComponent extends Component {
 
+    onSortEnd = ({ oldIndex, newIndex }) => {
+        console.log(this.props.imageList, oldIndex, newIndex)
+        this.props.imageOperations.moveImage(oldIndex, newIndex)
+    }
+
     render() {
-        return <SortableList pressDelay={100} axis={this.props.axis} items={this.props.imageList} onSortEnd={this.props.onSortEnd} deleteImage={this.props.deleteImage} />;
+        return <SortableList pressDelay={100} axis={this.props.axis} items={this.props.imageOperations.imageList} onSortEnd={this.onSortEnd} deleteImage={this.props.imageOperations.deleteImage} />;
     }
 }
 

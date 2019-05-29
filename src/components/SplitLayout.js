@@ -3,7 +3,7 @@ import '../App.css'
 import { numberLiteralTypeAnnotation } from '@babel/types';
 
 class SplitLayout extends React.Component {
-    
+
     state = {
         inputs: [
             {
@@ -117,7 +117,7 @@ class SplitLayout extends React.Component {
         this.setState({
             inputs: [
                 ...this.state.inputs.slice(0, inputIndex),
-                {...this.state.inputs[inputIndex], value: event.target.value},
+                {...this.state.inputs[inputIndex], value: event.target.value },
                 ...this.state.inputs.slice(inputIndex + 1, this.state.inputs.length)
             ]
         })
@@ -142,13 +142,31 @@ class SplitLayout extends React.Component {
         return (
             <div>
                 <div className="topPanel">
-                    {React.cloneElement(this.props.children[0], { imageList: this.props.imageList, deleteImage: this.props.deleteImage, onSortEnd: this.props.onSortEnd, onDrop: this.props.onDrop })}
+                    {React.cloneElement(
+                        this.props.children[0],
+                        { imageOperations: this.props.imageOperations }
+                    )}
                 </div>
                 <div className="leftPanel">
-                    {React.cloneElement(this.props.children[2], { switch: this.switch, switchValue: this.switchValue.bind(this), properties: this.state.properties, inputs: this.state.inputs })}
+                    {React.cloneElement(
+                        this.props.children[1],
+                        {
+                            switch: this.switch,
+                            switchValue: this.switchValue.bind(this),
+                            properties: this.state.properties,
+                            inputs: this.state.inputs
+                        }
+                    )}
                 </div>
                 <div className="rightPanel">
-                    {React.cloneElement(this.props.children[1], { imageList: this.props.imageList, properties: properties, inputs: inputs })}
+                    {React.cloneElement(
+                        this.props.children[2],
+                        {
+                            imageOperations: this.props.imageOperations,
+                            properties: properties,
+                            inputs: inputs
+                        }
+                    )}
                 </div>
             </div>
         )

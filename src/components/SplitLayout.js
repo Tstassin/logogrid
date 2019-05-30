@@ -4,6 +4,20 @@ import '../App.css'
 class SplitLayout extends React.Component {
 
     state = {
+        globals: [
+            {
+                name: "canvas width",
+                camelName: "width",
+                type: "text",
+                value: "100%",   
+            },
+            {
+                name: "canvas height",
+                camelName: "height",
+                type: "text",
+                value: "auto",   
+            },
+        ],
         inputs: [
             {
                 name: "flex-grow",
@@ -110,6 +124,17 @@ class SplitLayout extends React.Component {
         ]
     }
 
+    switchGlobalValue = (event) => {
+        event.persist()
+        let globalIndex = parseInt(event.target.attributes.globalindex.nodeValue)
+        this.setState({
+            globals: [
+                ...this.state.globals.slice(0, globalIndex),
+                {...this.state.globals[globalIndex], value: event.target.value },
+                ...this.state.globals.slice(globalIndex + 1, this.state.inputs.length)
+            ]
+        })
+    }
     switchValue = (event) => {
         event.persist()
         let inputIndex = parseInt(event.target.attributes.inputindex.nodeValue)
@@ -138,6 +163,9 @@ class SplitLayout extends React.Component {
         let inputs = {}
         console.log(inputs)
         this.state.inputs.map(input => inputs[input.camelName] = input.value)
+        let globals = {}
+        console.log(inputs)
+        this.state.globals.map(global => globals[global.camelName] = global.value)
         return (
             <div>
                 <div className="topPanel">
@@ -152,8 +180,10 @@ class SplitLayout extends React.Component {
                         {
                             switch: this.switch,
                             switchValue: this.switchValue.bind(this),
+                            switchGlobalValue: this.switchGlobalValue.bind(this),
                             properties: this.state.properties,
-                            inputs: this.state.inputs
+                            inputs: this.state.inputs,
+                            globals: this.state.globals
                         }
                     )}
                 </div>
@@ -163,7 +193,8 @@ class SplitLayout extends React.Component {
                         {
                             imageOperations: this.props.imageOperations,
                             properties: properties,
-                            inputs: inputs
+                            inputs: inputs,
+                            globals: globals
                         }
                     )}
                 </div>

@@ -49,6 +49,11 @@
     box-sizing: border-box;
 }
 
+.rightPanel {
+    background: #eee;
+    height: calc(100vh - 150px);
+}
+
 .flexMenu .flexTable .propertyName {
     margin-right: 20px;
     margin-bottom: 5px;
@@ -60,6 +65,10 @@
 
 .flexMenu .flexTable .propertyValue:not(.active) a {
     text-decoration: none;
+}
+
+.flexMenu hr {
+    color: #eee;
 }
 
 .rightPanel {

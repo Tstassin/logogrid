@@ -7,6 +7,17 @@ class FlexMenu extends React.Component {
             <div className="flexMenu">
                 <table className="flexTable">
                     <tbody>
+                        {this.props.globals.map((global, globalIndex) => (
+                            <tr name={global.name} index={globalIndex} key={global.name}>
+                                <td>
+                                    <div className="globalName">{global.name}</div>
+                                </td>
+                                <td>
+                                    <input globalindex={globalIndex} type={global.type} value={global.type === "number" ? parseInt(global.value) : global.value} onChange={this.props.switchGlobalValue} />
+                                </td>
+                            </tr>
+                        ))}
+                        <hr />
                         {this.props.properties.map((property, propertyIndex) => (
                             <tr name={property.name} index={propertyIndex} key={property.name}>
                                 <td>
@@ -25,6 +36,7 @@ class FlexMenu extends React.Component {
                                 </td>
                             </tr>
                         ))}
+                        <hr />
                         {this.props.inputs.map((input, inputIndex) => (
                             <tr name={input.name} index={inputIndex} key={input.name}>
                                 <td>

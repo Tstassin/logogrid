@@ -32,7 +32,7 @@ class SortableImageList extends Component {
                 <div className="titleBar"><h1>LogoGrid</h1></div>
                 <SortableList
                     axis={'xy'}
-                    pressDelay={100} 
+                    pressDelay={50} 
                     imageOperations={this.props.imageOperations}
                     items={this.props.imageOperations.imageList} 
                     onSortEnd={this.onSortEnd} 

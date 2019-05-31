@@ -51,7 +51,7 @@
 
 .rightPanel {
     background: #eee;
-    height: calc(100vh - 150px);
+    min-height: calc(100vh - 150px);
 }
 
 .flexMenu .flexTable .propertyName {
@@ -92,8 +92,7 @@
 }
 
 .logogrid {
-    display: flex;
-    justify-content: center;
+    overflow: scroll;
 }
 
 .logogrid img {

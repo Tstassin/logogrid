@@ -93,6 +93,7 @@
 
 .logogrid {
     display: flex;
+    justify-content: center;
 }
 
 .logogrid img {
@@ -110,3 +111,53 @@
     text-align: center;
     color: #fff
 }
+
+.showSize.width {
+    text-align: center;
+  }
+  .showSize.width > .size {
+    position: relative;
+    padding: 0 10px;
+  }
+  .showSize.width > .size::before {
+    right: 100%;
+    content:"\2190";
+    text-align: left;
+  }
+  .showSize.width > .size::after {
+    left: 100%;
+    content:"\2192";
+    text-align: right;
+    
+  }
+  .showSize.width > .size::before, .showSize.width > .size::after {
+    position: absolute;
+    height: 9.5px;
+    border-bottom: 1px solid black;
+    top: 0;
+    width: 100%;
+  }
+
+
+.showSize.height > .size {
+    float: left;
+    margin: 5px;
+  }
+  .showSize.height {
+    display: flex;
+    align-items: center;
+  }
+  
+  .showSize.height > .size::before {
+    content:"\2191";
+    position: relative;
+    top: -20px;
+    left: 30px;
+  }
+  
+  .showSize.height > .size::after {
+    content:"\2193";
+    position: relative;
+    top: 20px;
+    left: -30px;
+  }

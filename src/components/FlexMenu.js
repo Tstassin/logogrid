@@ -1,7 +1,18 @@
 import React from 'react'
+import html2canvas from 'html2canvas'
 
 class FlexMenu extends React.Component {
 
+    state = {
+        exportedImage: "",
+    }
+
+    export = () => {
+        html2canvas(document.getElementById("canvas"), {useCORS: true, }).then((image) => {
+            console.log(image)
+            this.setState({exportedImage: image})
+        })
+    }
     render() {
         return (
             <div className="flexMenu">
@@ -17,7 +28,6 @@ class FlexMenu extends React.Component {
                                 </td>
                             </tr>
                         ))}
-                        <hr />
                         {this.props.properties.map((property, propertyIndex) => (
                             <tr name={property.name} index={propertyIndex} key={property.name}>
                                 <td>
@@ -36,7 +46,6 @@ class FlexMenu extends React.Component {
                                 </td>
                             </tr>
                         ))}
-                        <hr />
                         {this.props.inputs.map((input, inputIndex) => (
                             <tr name={input.name} index={inputIndex} key={input.name}>
                                 <td>
@@ -49,6 +58,10 @@ class FlexMenu extends React.Component {
                         ))}
                     </tbody>
                 </table>
+                <input type="button" onClick={() => this.export()} value="export as image" />
+                <div className="exportedImageContainer">
+                    <img src={this.state.exportedImage ? this.state.exportedImage.toDataURL() : "" } />
+                </div>
             </div>
         )
     }

@@ -112,52 +112,24 @@
     color: #fff
 }
 
-.showSize.width {
+  .canvasWrapper {
     text-align: center;
+    display: table;
+    border-spacing: 10px;
   }
-  .showSize.width > .size {
-    position: relative;
-    padding: 0 10px;
-  }
-  .showSize.width > .size::before {
-    right: 100%;
-    content:"\2190";
-    text-align: left;
-  }
-  .showSize.width > .size::after {
-    left: 100%;
-    content:"\2192";
-    text-align: right;
-    
-  }
-  .showSize.width > .size::before, .showSize.width > .size::after {
-    position: absolute;
-    height: 9.5px;
+  .canvasWrapper.width .size {
     border-bottom: 1px solid black;
-    top: 0;
-    width: 100%;
   }
-
-
-.showSize.height > .size {
-    float: left;
-    margin: 5px;
+  .canvasWrapper.height {
+    border-right: 1px solid black;
+    vertical-align: middle;
   }
-  .showSize.height {
-    display: flex;
-    align-items: center;
-  }
-  
-  .showSize.height > .size::before {
-    content:"\2191";
-    position: relative;
-    top: -20px;
-    left: 30px;
+  .canvasWrapper.height .size {
+      -webkit-transform: rotate(-90deg);
+      -moz-transform: rotate(-90deg);
+      -o-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+      transform: rotate(-90deg);
+    margin-right: -5px
   }
   
-  .showSize.height > .size::after {
-    content:"\2193";
-    position: relative;
-    top: 20px;
-    left: -30px;
-  }

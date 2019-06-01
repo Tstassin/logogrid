@@ -6,7 +6,7 @@
 .topPanel p {
     color: #333;
     margin: 0 20px 25px;
-    align-self: last baseline;
+    align-self: flex-end;
   }
 
   .topPanel > div {

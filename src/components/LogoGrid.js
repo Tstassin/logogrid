@@ -9,7 +9,11 @@ class LogoGrid extends React.Component {
                     <div className="canvas" id="canvas" style={{ ...this.props.properties, ...this.props.globals, display: "flex", background: "white" }}>
                         {this.props.imageOperations.imageList.map(
                             (image, index) => {
-                                return <img key={"logo-" + index} style={{ ...this.props.inputs }} src={image.preview} alt="" />
+                                return (
+                                    <div key={"logo-" + index} style={{ ...this.props.inputs }} >
+                                        <img src={image.preview} alt="" />
+                                    </div>
+                                )
                             }
                         )}
                     </div>

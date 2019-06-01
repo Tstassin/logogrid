@@ -38,7 +38,7 @@ class SortableImageList extends Component {
                     onSortEnd={this.onSortEnd} 
                     deleteImage={this.props.imageOperations.deleteImage}
                 />
-                {this.props.imageOperations.imageList.length === 0 && <h2>Drop some images to start...</h2>}
+                {this.props.imageOperations.imageList.length === 0 && <p>drop some images to start...</p>}
             </div>
         )
     }

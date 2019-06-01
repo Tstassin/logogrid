@@ -9,13 +9,13 @@ class SplitLayout extends React.Component {
                 name: "canvas width",
                 camelName: "width",
                 type: "text",
-                value: "100%",   
+                value: "100%",
             },
             {
                 name: "canvas height",
                 camelName: "height",
                 type: "text",
-                value: "auto",   
+                value: "auto",
             },
         ],
         inputs: [
@@ -130,7 +130,7 @@ class SplitLayout extends React.Component {
         this.setState({
             globals: [
                 ...this.state.globals.slice(0, globalIndex),
-                {...this.state.globals[globalIndex], value: event.target.value },
+                { ...this.state.globals[globalIndex], value: event.target.value },
                 ...this.state.globals.slice(globalIndex + 1, this.state.inputs.length)
             ]
         })
@@ -141,7 +141,7 @@ class SplitLayout extends React.Component {
         this.setState({
             inputs: [
                 ...this.state.inputs.slice(0, inputIndex),
-                {...this.state.inputs[inputIndex], value: event.target.value },
+                { ...this.state.inputs[inputIndex], value: event.target.value },
                 ...this.state.inputs.slice(inputIndex + 1, this.state.inputs.length)
             ]
         })
@@ -174,29 +174,31 @@ class SplitLayout extends React.Component {
                         { imageOperations: this.props.imageOperations }
                     )}
                 </div>
-                <div className="leftPanel">
-                    {React.cloneElement(
-                        this.props.children[1],
-                        {
-                            switch: this.switch,
-                            switchValue: this.switchValue.bind(this),
-                            switchGlobalValue: this.switchGlobalValue.bind(this),
-                            properties: this.state.properties,
-                            inputs: this.state.inputs,
-                            globals: this.state.globals
-                        }
-                    )}
-                </div>
-                <div className="rightPanel">
-                    {React.cloneElement(
-                        this.props.children[2],
-                        {
-                            imageOperations: this.props.imageOperations,
-                            properties: properties,
-                            inputs: inputs,
-                            globals: globals
-                        }
-                    )}
+                <div class="leftRight">
+                    <div className="leftPanel">
+                        {React.cloneElement(
+                            this.props.children[1],
+                            {
+                                switch: this.switch,
+                                switchValue: this.switchValue.bind(this),
+                                switchGlobalValue: this.switchGlobalValue.bind(this),
+                                properties: this.state.properties,
+                                inputs: this.state.inputs,
+                                globals: this.state.globals
+                            }
+                        )}
+                    </div>
+                    <div className="rightPanel">
+                        {React.cloneElement(
+                            this.props.children[2],
+                            {
+                                imageOperations: this.props.imageOperations,
+                                properties: properties,
+                                inputs: inputs,
+                                globals: globals
+                            }
+                        )}
+                    </div>
                 </div>
             </div>
         )

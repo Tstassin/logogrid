@@ -3,33 +3,31 @@
     margin: 0 20px;
   }
 
-.topPanel {
-    box-sizing: border-box;
-}
-
 .topPanel p {
     color: #333;
-    margin: 20px;
+    margin: 0 20px 25px;
+    align-self: last baseline;
   }
 
   .topPanel > div {
 
     display: flex;
-    align-items: baseline;
     flex-wrap: wrap;
 
 }
 
+.leftRight {
+    display: flex;
+}
+
 .leftPanel {
-    float: left;
-    width: 50%;
     padding: 20px;
-    box-sizing: border-box;
 }
 
 .rightPanel {
     background: #eee;
-    min-height: calc(100vh - 150px);
+    padding: 20px;
+    width: 100%;
 }
 
 .flexMenu .flexTable .propertyName {
@@ -49,13 +47,6 @@
     color: #eee;
 }
 
-.rightPanel {
-    float: right;
-    width: 50%;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
 .imageList {
     list-style-type: none;
     padding: 0;
@@ -65,7 +56,7 @@
 }
 
 .imageList img {
-    width: 65px;
+    width: 56px;
     margin: 5px;
 }
 
@@ -110,10 +101,6 @@ body > .img > img {
     vertical-align: middle;
   }
   .canvasWrapper.height .size {
-      -webkit-transform: rotate(-90deg);
-      -moz-transform: rotate(-90deg);
-      -o-transform: rotate(-90deg);
-      -ms-transform: rotate(-90deg);
       transform: rotate(-90deg);
     margin-right: -5px
   }

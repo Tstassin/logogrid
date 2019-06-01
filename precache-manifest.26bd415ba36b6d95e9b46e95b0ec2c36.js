@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "996b4a54c134b2eeeb8e657bea22837e",
+    "revision": "252ca6bbc200279fc6544952dca114a4",
     "url": "/logogrid/index.html"
   },
   {
-    "revision": "11ccc0f744cec7708b61",
+    "revision": "b203eaf511f6734dd854",
     "url": "/logogrid/static/css/main.a46a24d2.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/logogrid/static/js/2.125d4790.chunk.js"
   },
   {
-    "revision": "11ccc0f744cec7708b61",
-    "url": "/logogrid/static/js/main.504f7aef.chunk.js"
+    "revision": "b203eaf511f6734dd854",
+    "url": "/logogrid/static/js/main.8329c8d2.chunk.js"
   },
   {
     "revision": "eaba8a465c2697cfbc2d",

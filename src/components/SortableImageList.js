@@ -29,7 +29,7 @@ class SortableImageList extends Component {
     render() {
         return (
             <div>
-                <div className="titleBar"><h1>LogoGrid</h1></div>
+                <div className="titleBar"><h1>logogrid</h1></div>
                 <SortableList
                     axis={'xy'}
                     pressDelay={50} 

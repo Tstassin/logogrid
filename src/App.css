@@ -43,8 +43,24 @@
     text-decoration: none;
 }
 
-.flexMenu hr {
-    color: #eee;
+.flexMenu .label {
+    white-space: nowrap;
+}
+
+.flexMenu .exportAsImage input {
+    font-weight: 600;
+    text-transform: capitalize;
+    width: 100%;
+    padding: 5px;
+    margin: 15px 0;
+}
+
+.flexTable {
+    border-spacing: 6px;
+}
+
+.flexTable td {
+    vertical-align: baseline;
 }
 
 .imageList {
@@ -106,6 +122,7 @@ body > .img > img {
   }
   
   .exportedImageContainer img {
-    max-width: 100%;
+    max-width: 650px;
     height: auto;
-  }
+    border: 1px dashed black;
+}

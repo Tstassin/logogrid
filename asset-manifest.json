@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/logogrid/static/css/main.c733c4c2.chunk.css",
-    "main.js": "/logogrid/static/js/main.5606198e.chunk.js",
-    "main.js.map": "/logogrid/static/js/main.5606198e.chunk.js.map",
+    "main.css": "/logogrid/static/css/main.7a71667c.chunk.css",
+    "main.js": "/logogrid/static/js/main.28e908da.chunk.js",
+    "main.js.map": "/logogrid/static/js/main.28e908da.chunk.js.map",
     "runtime~main.js": "/logogrid/static/js/runtime~main.3454d395.js",
     "runtime~main.js.map": "/logogrid/static/js/runtime~main.3454d395.js.map",
     "static/js/2.125d4790.chunk.js": "/logogrid/static/js/2.125d4790.chunk.js",
     "static/js/2.125d4790.chunk.js.map": "/logogrid/static/js/2.125d4790.chunk.js.map",
     "index.html": "/logogrid/index.html",
-    "precache-manifest.ea8f87846f8cc04dc6de958d1ae39375.js": "/logogrid/precache-manifest.ea8f87846f8cc04dc6de958d1ae39375.js",
+    "precache-manifest.efd960faaf867da42037020db1ec8888.js": "/logogrid/precache-manifest.efd960faaf867da42037020db1ec8888.js",
     "service-worker.js": "/logogrid/service-worker.js",
-    "static/css/main.c733c4c2.chunk.css.map": "/logogrid/static/css/main.c733c4c2.chunk.css.map"
+    "static/css/main.7a71667c.chunk.css.map": "/logogrid/static/css/main.7a71667c.chunk.css.map"
   }
 }

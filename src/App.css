@@ -86,7 +86,11 @@ body>.img>img {
     padding: 20px;
 }
 
-.logogrid img {
+.logogrid .canvas > div {
+    box-sizing: border-box;
+}
+
+.logogrid .canvas img {
     width: 100%;
     display: block;
 }

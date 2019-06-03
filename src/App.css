@@ -23,7 +23,7 @@
 
 .rightPanel {
     background: #eee;
-    padding: 20px;
+    margin: 20px;
     width:100%;
 }
 
@@ -82,20 +82,12 @@ body>.img>img {
     border: 1px dashed black;
 }
 
-.logogrid img {
-    width: 100%;
+.logogrid {
+    padding: 20px;
 }
 
-.overlayStyle {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    padding: 2.5em 0;
-    background: rgba(0, 0, 0, 0.5);
-    text-align: center;
-    color: #fff
+.logogrid img {
+    width: 100%;
 }
 
 .canvasWrapper {

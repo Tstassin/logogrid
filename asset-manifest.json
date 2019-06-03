@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/logogrid/static/css/main.7a71667c.chunk.css",
+    "main.css": "/logogrid/static/css/main.0d7137a9.chunk.css",
     "main.js": "/logogrid/static/js/main.28e908da.chunk.js",
     "main.js.map": "/logogrid/static/js/main.28e908da.chunk.js.map",
     "runtime~main.js": "/logogrid/static/js/runtime~main.3454d395.js",
@@ -8,8 +8,8 @@
     "static/js/2.125d4790.chunk.js": "/logogrid/static/js/2.125d4790.chunk.js",
     "static/js/2.125d4790.chunk.js.map": "/logogrid/static/js/2.125d4790.chunk.js.map",
     "index.html": "/logogrid/index.html",
-    "precache-manifest.efd960faaf867da42037020db1ec8888.js": "/logogrid/precache-manifest.efd960faaf867da42037020db1ec8888.js",
+    "precache-manifest.95ede169e63111ba93c670c34438c100.js": "/logogrid/precache-manifest.95ede169e63111ba93c670c34438c100.js",
     "service-worker.js": "/logogrid/service-worker.js",
-    "static/css/main.7a71667c.chunk.css.map": "/logogrid/static/css/main.7a71667c.chunk.css.map"
+    "static/css/main.0d7137a9.chunk.css.map": "/logogrid/static/css/main.0d7137a9.chunk.css.map"
   }
 }
